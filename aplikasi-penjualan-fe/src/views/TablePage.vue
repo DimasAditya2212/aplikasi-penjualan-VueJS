@@ -20,7 +20,7 @@
             <router-link :to="{ name: 'Edititem', params: { id: item.id } }">
               <i class="fas fa-edit fa-lg edits"></i>
             </router-link>
-            <button @click="deleteClick(item.id)">
+            <button @click.prevent="deleteClick(item.id, index)">
               <i class="fas fa-trash fa-lg deletes"></i>
             </button>
           </td>
@@ -42,20 +42,20 @@ export default {
   },
 
   methods: {
-    deleteClick(id) {
+    deleteClick(id, index) {
       const axios = require("axios").default;
 
       axios
         .delete(`http://127.0.0.1:8000/api/items/${id}`, {
           data: { id: id },
         })
-        .then(function (response) {
+        .then((response) => {
           console.log(response);
-          location.reload();
-        })
-        .catch((error) => {
-          console.log("ERRRR:: ", error.response.data);
+          this.items.splice(index, 1);
         });
+      // .catch((error) => {
+      //   console.log("ERRRR:: ", error.response.data);
+      // });
     },
   },
 
@@ -81,6 +81,18 @@ td button {
 
 td i:hover {
   transform: scale(1.2);
+}
+
+.container {
+  -webkit-animation: fadein 1.5s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
 

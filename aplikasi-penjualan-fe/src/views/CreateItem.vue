@@ -46,6 +46,7 @@
             name="satuan"
             v-model="selected"
           >
+            <option value="" disabled selected hidden>Select Unit</option>
             <option value="pcs">Pcs</option>
             <option value="kg">Kg</option>
           </select>
@@ -57,6 +58,8 @@
 </template>
 
 <script>
+// import Vue from "vue";
+
 export default {
   name: "CreateItem",
 
@@ -95,12 +98,12 @@ export default {
           harga_satuan: this.harga_satuan,
           unit: this.selected,
         })
-        .then(function (response) {
+        .then((response) => {
           console.log(response);
           this.$router.push("/items");
         })
         .catch((error) => {
-          console.log("ERRRR:: ", error.response.data);
+          console.log("ERRRR:: ", error.response);
         });
     },
   },
@@ -114,5 +117,17 @@ export default {
 }
 .card {
   border-radius: 10px;
+}
+
+.container {
+  -webkit-animation: fadein 1.5s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>

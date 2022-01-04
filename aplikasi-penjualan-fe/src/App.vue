@@ -10,7 +10,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <div class="navbar-toggler-icon mx-auto"></div>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -45,7 +45,9 @@
   font-weight: bold;
   color: #9db1c4;
   text-decoration: none;
-  display: flex;
+  display: absolute;
+  /* background-color: fuchsia; */
+  padding: 2px 6px;
 }
 .navbar .container-fluid .collapse {
   justify-content: space-evenly;
@@ -57,11 +59,20 @@ ul li {
 
 .navbar a.router-link-exact-active {
   color: #ffffff;
-  background-color: #9db1c4;
-  border-radius: 7px;
-  padding: 4px;
+  /* background-color: #9db1c4; */
+  background-color: rgb(85, 143, 143);
+  border-bottom: 1px solid rgb(85, 143, 143);
+  border-radius: 5px;
+  transition: 0.4s;
+  /* padding: 4px; */
+}
+
+.navbar a:hover {
+  /* background-color: #9db1c4; */
+  border-bottom: 3px solid floralwhite;
+  border-radius: 8px;
 }
 a {
-  transition: 0.3s;
+  transition: 0.15s;
 }
 </style>

@@ -18,7 +18,6 @@ const routes = [
     path: "/items/edit/:id",
     name: "Edititem",
     component: EditItem,
-    props: true,
   },
 ];
 
