@@ -2,8 +2,14 @@ import { createRouter, createWebHistory } from "vue-router";
 import TablePage from "../views/TablePage.vue";
 import CreateItem from "../views/CreateItem.vue";
 import EditItem from "../views/EditItem.vue";
+import Home from "../views/Home.vue";
 
 const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
   {
     path: "/items",
     name: "TablePage",

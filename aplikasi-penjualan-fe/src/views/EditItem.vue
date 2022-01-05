@@ -1,7 +1,10 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <div class="container">
-      <div class="card">
+    <div class="container-fluid d-flex justify-content-center">
+      <div class="col-3 align-self-center">
+        <h3>edit your item data here</h3>
+      </div>
+      <div class="card col-7">
         <div class="card-header">
           <h3 class="mt-2">Edit Item</h3>
         </div>
@@ -59,7 +62,7 @@
 </template>
 
 <script>
-import { onMounted, ref, reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 
@@ -159,12 +162,13 @@ export default {
 </script>
 <style scoped>
 .card-header {
-  background-color: dimgray;
+  background-color: seashell;
   padding: 10px;
-  color: aliceblue;
+  color: rgb(94, 94, 94);
 }
-.container {
+.container-fluid {
   -webkit-animation: fadein 1.5s;
+  padding: 50px;
 }
 @keyframes fadein {
   from {
