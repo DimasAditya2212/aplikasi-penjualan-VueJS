@@ -28,4 +28,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return 'no';
+    return 'no';
+    return 'no';
 });
